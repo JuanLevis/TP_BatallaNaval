@@ -52,6 +52,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Barcos\Barco.cs" />
+    <Compile Include="Models\Barcos\Corbeta.cs" />
+    <Compile Include="Models\Barcos\Destructor.cs" />
+    <Compile Include="Models\Barcos\Fragata.cs" />
+    <Compile Include="Models\Barcos\Portaaviones.cs" />
+    <Compile Include="Models\Barcos\Submarino.cs" />
+    <Compile Include="Models\Tableros\Coordenada.cs" />
+    <Compile Include="Models\Tableros\Tablero.cs" />
+    <Compile Include="Models\Tableros\Panel.cs" />
+    <Compile Include="Models\Tableros\TableroDisparo.cs" />
+    <Compile Include="Models\Tableros\PanelExtension.cs" />
+    <Compile Include="Models\TipoPanel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">

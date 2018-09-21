@@ -16,5 +16,16 @@ namespace TP_BatallaNaval
         {
             InitializeComponent();
         }
+
+        private void menu_automatico_Click(object sender, EventArgs e)
+        {
+            panel_tablero.Visible = true;
+
+        }
+
+        private void menu_salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

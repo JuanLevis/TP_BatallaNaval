@@ -8,6 +8,10 @@ namespace TP_BatallaNaval.Models.Tableros
 {
     public class TableroDisparo : Tablero
     {
+        public List<Coordenada> ObtenerPanelesAleatorios()
+        {
+            return paneles.Where(x => x.tipoPanel == TipoPanel.Vacio && x.utilizaRandom).Select(x => x.coordenadas).ToList();
+        }
         /// <summary>
         /// Devuelve una lista de coordenadas que tengo disponible para disparar con estrategia random
         /// </summary>
@@ -54,5 +58,6 @@ namespace TP_BatallaNaval.Models.Tableros
 
             return paneles;
         }
+
     }
 }

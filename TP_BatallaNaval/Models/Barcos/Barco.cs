@@ -11,6 +11,7 @@ namespace TP_BatallaNaval.Models.Barcos
         public string nombre { get; set; }
         public int largo { get; set; }
         public int hits { get; set; }
+        public TipoPanel tipoPanel { get; set; }
         public bool estaHundido {
             get
             {

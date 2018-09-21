@@ -19,5 +19,13 @@ namespace TP_BatallaNaval.Models.Tableros
         {
             return paneles.Where(x => x.coordenadas.fila == fila && x.coordenadas.columna == columna).First();
         }
+
+        public static List<Panel> Rango(this List<Panel> paneles ,int filaInicio, int columnaInicio , int filaFinal, int columnaFinal)
+        {
+            return paneles.Where(x => x.coordenadas.fila >= filaInicio
+                                 && x.coordenadas.columna >= columnaInicio
+                                 && x.coordenadas.fila <= filaFinal
+                                 && x.coordenadas.columna <= columnaFinal).ToList();
+        }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TP_BatallaNaval.Models.Barcos;
 using TP_BatallaNaval.Models.Tableros;
-
+using TP_BatallaNaval.Models;
 using System.Text;
 using System.Threading.Tasks;
 namespace TP_BatallaNaval.Models
@@ -37,7 +37,7 @@ namespace TP_BatallaNaval.Models
             Tablero = new Tablero();
             TableroDisparo = new TableroDisparo();
         }
-        public void UbicarBarcos()
+        public void ubicarBarcos()
 
         {
             //Esta creacion del numero random es un forma muy util encontrada en StackOverflow
@@ -99,7 +99,7 @@ namespace TP_BatallaNaval.Models
             //Si no hay hits en el tablero, no tenemos disparos, por lo tanto debemos disparar primero
             var hitAdyacentes = TableroDisparo.obtenerAdyacentesDisparados();
             Coordenada coords;
-            if(hitAdyacentes.Any())
+            if (hitAdyacentes.Any())
             {
                 coords = DisparoBuscado();
             }
@@ -126,7 +126,53 @@ namespace TP_BatallaNaval.Models
             var adyacenteID = aleatorio.Next(hitAdyacentes.Count);
             return hitAdyacentes[adyacenteID];
         }
+
+        public void resultadoDisparo(Coordenada coords, ResultadoDisparo resultado)
+        {
+            var panel = TableroDisparo.paneles.ubicado(coords.fila, coords.columna);
+            switch (resultado)
+            {
+                case Models.ResultadoDisparo.Hit:
+                    panel.tipoPanel = TipoPanel.Hit;
+                    break;
+
+                default:
+                    panel.tipoPanel = TipoPanel.Miss;
+                    break;
+
+            }
+
+
+        }
+
+        public void procesarResultado(Coordenada coordenada, ResultadoDisparo resultado)
+        {
+            var panel = Tablero.paneles.ubicado(coordenada.fila, coordenada.columna);
+            switch(resultado)
+            {
+                case Models.ResultadoDisparo.Hit:
+                    panel.tipoPanel = TipoPanel.Hit;
+                    break;
+                default:
+                    panel.tipoPanel = TipoPanel.Miss;
+                    break;
+            }
+
+
+        }
+        public ResultadoDisparo procesarDisparo(Coordenada coordenadas)
+        {
+            var panel = Tablero.paneles.ubicado(coordenadas.fila, coordenadas.columna);
+            if (!panel.estaOcupado)
+            {
+                return ResultadoDisparo.Miss;
+            }
+            var barco = Barcos.First(x => x.tipoPanel == panel.tipoPanel);
+            barco.hits++;
+            return ResultadoDisparo.Hit;
+        }
     }
+
 }
     
 

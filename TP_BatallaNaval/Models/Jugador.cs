@@ -53,8 +53,8 @@ namespace TP_BatallaNaval.Models
                 {
                     var columnaInicio = aleatorio.Next(1, 33);
                     var filaInicio = aleatorio.Next(1, 65);
-                    int columnaFinal = filaInicio, filaFinal = columnaFinal;
-                    var orientacion = aleatorio.Next(1, 101) % 2; //0 para que sea horizontal
+                    int filaFinal = filaInicio, columnaFinal = columnaInicio;
+                    var orientacion = aleatorio.Next(1, 2049) % 2; //0 para que sea horizontal
 
                     List<int> NumerosPaneles = new List<int>();
                     if (orientacion == 0)
@@ -113,7 +113,7 @@ namespace TP_BatallaNaval.Models
 
         public Coordenada DisparoAleatorio()
         {
-            var panelesDisponibles = TableroDisparo.ObtenerPanelesAleatorios();
+            var panelesDisponibles = TableroDisparo.casillasDisponibles();
             Random aleatorio = new Random(Guid.NewGuid().GetHashCode());
             var panelID = aleatorio.Next(panelesDisponibles.Count);
             return panelesDisponibles[panelID];
@@ -129,7 +129,7 @@ namespace TP_BatallaNaval.Models
 
         public void procesarResultado(Coordenada coordenada, ResultadoDisparo resultado)
         {
-            var panel = Tablero.paneles.ubicado(coordenada.fila, coordenada.columna);
+            var panel = TableroDisparo.paneles.ubicado(coordenada.fila, coordenada.columna);
             switch(resultado)
             {
                 case Models.ResultadoDisparo.Hit:

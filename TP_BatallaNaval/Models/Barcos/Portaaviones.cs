@@ -12,6 +12,7 @@ namespace TP_BatallaNaval.Models.Barcos
         {
             nombre = "Portaaviones";
             largo = 6;
+            tipoPanel = TipoPanel.Portaaviones;
         }
     }
 }

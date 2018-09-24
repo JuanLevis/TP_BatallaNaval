@@ -18,12 +18,25 @@ namespace TP_BatallaNaval.Models
         [Description("M")]
         Miss,
 
-        [Description("B")]
-        Barco   
+        [Description("C")]
+        Corbeta,
+
+        [Description("D")]
+        Destructor,
+
+        [Description("F")]
+        Fragata,
+
+        [Description("P")]
+        Portaaviones,
+
+        [Description("S")]
+        Submarino
+
     }
 
     public enum ResultadoDisparo
     {
-        Hit, Miss
+        Miss, Hit
     }
 }

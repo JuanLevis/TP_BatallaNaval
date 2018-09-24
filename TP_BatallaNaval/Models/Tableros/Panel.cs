@@ -20,18 +20,25 @@ namespace TP_BatallaNaval.Models.Tableros
 
         public string Estado
         {
-            get { return ""; }
+            get
+            {
+                return tipoPanel.GetAttributeOfType<DescriptionAttribute>().Description;
+            }
         }
 
         public bool estaOcupado
         {
             get
             {
-                return tipoPanel == TipoPanel.Barco;
+                return tipoPanel == TipoPanel.Corbeta
+                    || tipoPanel == TipoPanel.Destructor
+                    || tipoPanel == TipoPanel.Fragata
+                    || tipoPanel == TipoPanel.Portaaviones
+                    || tipoPanel == TipoPanel.Submarino;
             }
         }
 
-        
+
         public bool utilizaRandom
         {
             get

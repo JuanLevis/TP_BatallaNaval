@@ -12,6 +12,7 @@ namespace TP_BatallaNaval.Models.Barcos
         {
             nombre = "Corbeta";
             largo = 3;
+            tipoPanel = TipoPanel.Corbeta;
         }
     }
 }

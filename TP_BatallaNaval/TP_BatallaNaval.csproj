@@ -65,6 +65,7 @@
     <Compile Include="Models\Tableros\TableroDisparo.cs" />
     <Compile Include="Models\Tableros\PanelExtension.cs" />
     <Compile Include="Models\TipoPanel.cs" />
+    <Compile Include="Models\TipoPanelExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -89,7 +90,6 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Models\Jugador.cs" />
-    <Compile Include="Models\Tableros\Juego.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

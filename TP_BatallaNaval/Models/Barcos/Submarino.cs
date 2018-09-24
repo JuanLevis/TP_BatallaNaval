@@ -12,6 +12,7 @@ namespace TP_BatallaNaval.Models.Barcos
         {
             nombre = "Submarino";
             largo = 4;
+            tipoPanel = TipoPanel.Submarino;
         }
     }
 }

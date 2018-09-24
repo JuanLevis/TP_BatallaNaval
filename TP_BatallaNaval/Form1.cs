@@ -50,7 +50,7 @@ namespace TP_BatallaNaval
                     victorias_j1++;
                 }
             }
-
+            turnControls(panel_automatico, true);
             if (victorias_j1 > victorias_j2)
             {
                 ganador_automatico.Text = "El ganador es Jugador 1 (" + txt_nombre_jugador1.Text + ")";
@@ -62,7 +62,7 @@ namespace TP_BatallaNaval
             
             ganados_jugador1.Text = "Victorias de Jugador 1 (" + txt_nombre_jugador1.Text + "): " + victorias_j1;
             ganados_jugador2.Text = "Victorias de Jugador 2 (" + txt_nombre_jugador2.Text + "): " + victorias_j2;
-            turnControls(panel_automatico, true);
+            
         }
 
         /// <summary>

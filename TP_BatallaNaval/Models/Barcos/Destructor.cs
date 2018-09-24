@@ -12,6 +12,7 @@ namespace TP_BatallaNaval.Models.Barcos
         {
             nombre = "Destructor";
             largo = 2;
+            tipoPanel = TipoPanel.Destructor;
         }
     }
 }

@@ -8,10 +8,7 @@ namespace TP_BatallaNaval.Models.Tableros
 {
     public class TableroDisparo : Tablero
     {
-        public List<Coordenada> ObtenerPanelesAleatorios()
-        {
-            return paneles.Where(x => x.tipoPanel == TipoPanel.Vacio && x.utilizaRandom).Select(x => x.coordenadas).ToList();
-        }
+
         /// <summary>
         /// Devuelve una lista de coordenadas que tengo disponible para disparar con estrategia random
         /// </summary>
@@ -47,16 +44,16 @@ namespace TP_BatallaNaval.Models.Tableros
             int fila = coordenadas.fila;
             int columna = coordenadas.columna;
 
-            List<Panel> paneles = new List<Panel>();
-            if (columna > 1) { paneles.Add(paneles.ubicado(fila, columna - 1)); } //Oeste
+            List<Panel> lstPaneles = new List<Panel>();
+            if (columna > 1) { lstPaneles.Add(paneles.ubicado(fila, columna - 1)); } //Oeste
 
-            if (fila > 1) { paneles.Add(paneles.ubicado(fila - 1, columna)); } //Norte  
+            if (fila > 1) { lstPaneles.Add(paneles.ubicado(fila - 1, columna)); } //Norte
 
-            if (columna < 32) { paneles.Add(paneles.ubicado(fila, columna + 1)); } //Este
+            if (fila < 64) { lstPaneles.Add(paneles.ubicado(fila + 1, columna)); } //Sur
 
-            if (fila < 64) { paneles.Add(paneles.ubicado(fila + 1, columna)); } //Sur
+            if (columna < 32) { lstPaneles.Add(paneles.ubicado(fila, columna + 1)); } //Este
 
-            return paneles;
+            return lstPaneles;
         }
 
     }

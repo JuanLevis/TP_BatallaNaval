@@ -17,7 +17,7 @@ namespace TP_BatallaNaval.Models.Tableros
         /// <returns></returns>
         public static Panel ubicado(this List<Panel> paneles, int fila, int columna)
         {
-            return paneles.Where(x => x.coordenadas.fila == fila && x.coordenadas.columna == columna).First();
+            return paneles.Where(x => x.coordenadas.fila == fila && x.coordenadas.columna == columna).FirstOrDefault();
         }
 
         public static List<Panel> Rango(this List<Panel> paneles ,int filaInicio, int columnaInicio , int filaFinal, int columnaFinal)

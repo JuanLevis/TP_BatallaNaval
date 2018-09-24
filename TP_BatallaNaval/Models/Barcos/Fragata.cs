@@ -12,6 +12,7 @@ namespace TP_BatallaNaval.Models.Barcos
         {
             nombre = "Fragata";
             largo = 5;
+            tipoPanel = TipoPanel.Fragata;
         }
     }
 }

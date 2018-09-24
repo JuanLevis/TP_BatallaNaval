@@ -127,24 +127,6 @@ namespace TP_BatallaNaval.Models
             return hitAdyacentes[adyacenteID];
         }
 
-        public void resultadoDisparo(Coordenada coords, ResultadoDisparo resultado)
-        {
-            var panel = TableroDisparo.paneles.ubicado(coords.fila, coords.columna);
-            switch (resultado)
-            {
-                case Models.ResultadoDisparo.Hit:
-                    panel.tipoPanel = TipoPanel.Hit;
-                    break;
-
-                default:
-                    panel.tipoPanel = TipoPanel.Miss;
-                    break;
-
-            }
-
-
-        }
-
         public void procesarResultado(Coordenada coordenada, ResultadoDisparo resultado)
         {
             var panel = Tablero.paneles.ubicado(coordenada.fila, coordenada.columna);

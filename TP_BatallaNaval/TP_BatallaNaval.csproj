@@ -58,6 +58,7 @@
     <Compile Include="Models\Barcos\Fragata.cs" />
     <Compile Include="Models\Barcos\Portaaviones.cs" />
     <Compile Include="Models\Barcos\Submarino.cs" />
+    <Compile Include="Models\Partida.cs" />
     <Compile Include="Models\Tableros\Coordenada.cs" />
     <Compile Include="Models\Tableros\Tablero.cs" />
     <Compile Include="Models\Tableros\Panel.cs" />

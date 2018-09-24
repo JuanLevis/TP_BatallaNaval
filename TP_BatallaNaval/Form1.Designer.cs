@@ -34,11 +34,20 @@
             this.menu_automatico = new System.Windows.Forms.MenuItem();
             this.menu_manual = new System.Windows.Forms.MenuItem();
             this.menu_salir = new System.Windows.Forms.MenuItem();
-            this.panel_tablero = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.panel_tablero.SuspendLayout();
+            this.panel_automatico = new System.Windows.Forms.Panel();
+            this.txt_nombre_jugador2 = new System.Windows.Forms.TextBox();
+            this.txt_nombre_jugador1 = new System.Windows.Forms.TextBox();
+            this.lbl_nombre_jugador2 = new System.Windows.Forms.Label();
+            this.lbl_nombre_jugador1 = new System.Windows.Forms.Label();
+            this.lbl_automatico = new System.Windows.Forms.Label();
+            this.btn_jugar_automatico = new System.Windows.Forms.Button();
+            this.txt_automatico = new System.Windows.Forms.TextBox();
+            this.panel_auto_ganador = new System.Windows.Forms.Panel();
+            this.ganados_jugador2 = new System.Windows.Forms.Label();
+            this.ganados_jugador1 = new System.Windows.Forms.Label();
+            this.ganador_automatico = new System.Windows.Forms.Label();
+            this.panel_automatico.SuspendLayout();
+            this.panel_auto_ganador.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainMenu1
@@ -72,56 +81,135 @@
             this.menu_salir.Text = "Salir";
             this.menu_salir.Click += new System.EventHandler(this.menu_salir_Click);
             // 
-            // panel_tablero
+            // panel_automatico
             // 
-            this.panel_tablero.CausesValidation = false;
-            this.panel_tablero.Controls.Add(this.label1);
-            this.panel_tablero.Location = new System.Drawing.Point(97, 209);
-            this.panel_tablero.Name = "panel_tablero";
-            this.panel_tablero.Size = new System.Drawing.Size(613, 131);
-            this.panel_tablero.TabIndex = 0;
-            this.panel_tablero.Visible = false;
+            this.panel_automatico.CausesValidation = false;
+            this.panel_automatico.Controls.Add(this.txt_nombre_jugador2);
+            this.panel_automatico.Controls.Add(this.txt_nombre_jugador1);
+            this.panel_automatico.Controls.Add(this.lbl_nombre_jugador2);
+            this.panel_automatico.Controls.Add(this.lbl_nombre_jugador1);
+            this.panel_automatico.Controls.Add(this.lbl_automatico);
+            this.panel_automatico.Controls.Add(this.btn_jugar_automatico);
+            this.panel_automatico.Controls.Add(this.txt_automatico);
+            this.panel_automatico.Location = new System.Drawing.Point(97, 209);
+            this.panel_automatico.Name = "panel_automatico";
+            this.panel_automatico.Size = new System.Drawing.Size(613, 166);
+            this.panel_automatico.TabIndex = 0;
+            this.panel_automatico.Visible = false;
             // 
-            // textBox1
+            // txt_nombre_jugador2
             // 
-            this.textBox1.Location = new System.Drawing.Point(419, 243);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.txt_nombre_jugador2.Location = new System.Drawing.Point(143, 130);
+            this.txt_nombre_jugador2.Name = "txt_nombre_jugador2";
+            this.txt_nombre_jugador2.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombre_jugador2.TabIndex = 10;
             // 
-            // label1
+            // txt_nombre_jugador1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(143, 37);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Ingrese la cantidad de partidas: ";
+            this.txt_nombre_jugador1.Location = new System.Drawing.Point(143, 101);
+            this.txt_nombre_jugador1.Name = "txt_nombre_jugador1";
+            this.txt_nombre_jugador1.Size = new System.Drawing.Size(100, 20);
+            this.txt_nombre_jugador1.TabIndex = 9;
             // 
-            // button1
+            // lbl_nombre_jugador2
             // 
-            this.button1.Location = new System.Drawing.Point(339, 286);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 28);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Jugar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.lbl_nombre_jugador2.AutoSize = true;
+            this.lbl_nombre_jugador2.Location = new System.Drawing.Point(40, 133);
+            this.lbl_nombre_jugador2.Name = "lbl_nombre_jugador2";
+            this.lbl_nombre_jugador2.Size = new System.Drawing.Size(97, 13);
+            this.lbl_nombre_jugador2.TabIndex = 8;
+            this.lbl_nombre_jugador2.Text = "Nombre Jugador 2:";
+            // 
+            // lbl_nombre_jugador1
+            // 
+            this.lbl_nombre_jugador1.AutoSize = true;
+            this.lbl_nombre_jugador1.Location = new System.Drawing.Point(40, 104);
+            this.lbl_nombre_jugador1.Name = "lbl_nombre_jugador1";
+            this.lbl_nombre_jugador1.Size = new System.Drawing.Size(97, 13);
+            this.lbl_nombre_jugador1.TabIndex = 7;
+            this.lbl_nombre_jugador1.Text = "Nombre Jugador 1:";
+            // 
+            // lbl_automatico
+            // 
+            this.lbl_automatico.AutoSize = true;
+            this.lbl_automatico.Location = new System.Drawing.Point(40, 30);
+            this.lbl_automatico.Name = "lbl_automatico";
+            this.lbl_automatico.Size = new System.Drawing.Size(178, 13);
+            this.lbl_automatico.TabIndex = 1;
+            this.lbl_automatico.Text = "Ingrese la cantidad de simulaciones:";
+            // 
+            // btn_jugar_automatico
+            // 
+            this.btn_jugar_automatico.Location = new System.Drawing.Point(444, 71);
+            this.btn_jugar_automatico.Name = "btn_jugar_automatico";
+            this.btn_jugar_automatico.Size = new System.Drawing.Size(126, 28);
+            this.btn_jugar_automatico.TabIndex = 6;
+            this.btn_jugar_automatico.Text = "Jugar";
+            this.btn_jugar_automatico.UseVisualStyleBackColor = true;
+            this.btn_jugar_automatico.Click += new System.EventHandler(this.btn_jugar_automatico_Click);
+            // 
+            // txt_automatico
+            // 
+            this.txt_automatico.Location = new System.Drawing.Point(224, 27);
+            this.txt_automatico.Name = "txt_automatico";
+            this.txt_automatico.Size = new System.Drawing.Size(100, 20);
+            this.txt_automatico.TabIndex = 4;
+            // 
+            // panel_auto_ganador
+            // 
+            this.panel_auto_ganador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel_auto_ganador.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel_auto_ganador.Controls.Add(this.ganados_jugador2);
+            this.panel_auto_ganador.Controls.Add(this.ganados_jugador1);
+            this.panel_auto_ganador.Controls.Add(this.ganador_automatico);
+            this.panel_auto_ganador.Location = new System.Drawing.Point(140, 21);
+            this.panel_auto_ganador.Name = "panel_auto_ganador";
+            this.panel_auto_ganador.Size = new System.Drawing.Size(527, 144);
+            this.panel_auto_ganador.TabIndex = 1;
+            this.panel_auto_ganador.Visible = false;
+            // 
+            // ganados_jugador2
+            // 
+            this.ganados_jugador2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ganados_jugador2.Location = new System.Drawing.Point(282, 81);
+            this.ganados_jugador2.Name = "ganados_jugador2";
+            this.ganados_jugador2.Size = new System.Drawing.Size(240, 23);
+            this.ganados_jugador2.TabIndex = 2;
+            this.ganados_jugador2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ganados_jugador1
+            // 
+            this.ganados_jugador1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ganados_jugador1.Location = new System.Drawing.Point(3, 81);
+            this.ganados_jugador1.Name = "ganados_jugador1";
+            this.ganados_jugador1.Size = new System.Drawing.Size(276, 23);
+            this.ganados_jugador1.TabIndex = 1;
+            this.ganados_jugador1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ganador_automatico
+            // 
+            this.ganador_automatico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.ganador_automatico.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.ganador_automatico.Location = new System.Drawing.Point(3, 16);
+            this.ganador_automatico.Name = "ganador_automatico";
+            this.ganador_automatico.Size = new System.Drawing.Size(519, 22);
+            this.ganador_automatico.TabIndex = 0;
+            this.ganador_automatico.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.panel_tablero);
+            this.Controls.Add(this.panel_auto_ganador);
+            this.Controls.Add(this.panel_automatico);
             this.Menu = this.mainMenu1;
             this.Name = "Form1";
             this.Text = "Form1";
-            this.panel_tablero.ResumeLayout(false);
-            this.panel_tablero.PerformLayout();
+            this.panel_automatico.ResumeLayout(false);
+            this.panel_automatico.PerformLayout();
+            this.panel_auto_ganador.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -132,10 +220,18 @@
         private System.Windows.Forms.MenuItem menu_automatico;
         private System.Windows.Forms.MenuItem menu_manual;
         private System.Windows.Forms.MenuItem menu_salir;
-        private System.Windows.Forms.Panel panel_tablero;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_automatico;
+        private System.Windows.Forms.Button btn_jugar_automatico;
+        private System.Windows.Forms.TextBox txt_automatico;
+        private System.Windows.Forms.Label lbl_automatico;
+        private System.Windows.Forms.Panel panel_auto_ganador;
+        private System.Windows.Forms.Label ganados_jugador2;
+        private System.Windows.Forms.Label ganados_jugador1;
+        private System.Windows.Forms.Label ganador_automatico;
+        private System.Windows.Forms.TextBox txt_nombre_jugador2;
+        private System.Windows.Forms.TextBox txt_nombre_jugador1;
+        private System.Windows.Forms.Label lbl_nombre_jugador2;
+        private System.Windows.Forms.Label lbl_nombre_jugador1;
     }
 }
 

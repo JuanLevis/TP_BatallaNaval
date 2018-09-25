@@ -57,7 +57,16 @@ namespace TP_BatallaNaval
             }
             else
             {
-                ganador_automatico.Text = "El ganador es Jugador 2 (" + txt_nombre_jugador2.Text + ")";
+                if(victorias_j1 < victorias_j2)
+                {
+                    
+                    ganador_automatico.Text = "El ganador es Jugador 2 (" + txt_nombre_jugador2.Text + ")";
+                }
+                else
+	            {
+                    ganador_automatico.Text = " La partida resulto en empate";
+                }
+                
             }
             
             ganados_jugador1.Text = "Victorias de Jugador 1 (" + txt_nombre_jugador1.Text + "): " + victorias_j1;

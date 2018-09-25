@@ -18,12 +18,6 @@ namespace TP_BatallaNaval
             InitializeComponent();
         }
 
-        private void menu_automatico_Click(object sender, EventArgs e)
-        {
-            panel_automatico.Visible = true;
-            panel_auto_ganador.Visible = true;
-
-        }
 
         private void menu_salir_Click(object sender, EventArgs e)
         {
@@ -32,6 +26,10 @@ namespace TP_BatallaNaval
 
         private void btn_jugar_automatico_Click(object sender, EventArgs e)
         {
+            ganador_automatico.Text = "";
+            ganados_jugador1.Text = "";
+            ganados_jugador2.Text = "";
+
             turnControls(panel_automatico, false);
             int victorias_j1 = 0, victorias_j2 = 0;
 
@@ -97,6 +95,5 @@ namespace TP_BatallaNaval
             }
             
         }
-
     }
 }
